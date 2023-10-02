@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { initializeApp } from "firebase/app";
-	import { getAnalytics } from "firebase/analytics";
+	import { getAnalytics, isSupported } from "firebase/analytics";
 
 	import Footer from './footer.svelte';
 	import Header from './header.svelte';
@@ -24,7 +24,10 @@
 	};
 
 	const app = initializeApp(firebaseConfig);
-	getAnalytics(app);
+
+	isSupported().then(supported => {
+		if(supported) getAnalytics(app);
+	});
 </script>
 
 <div class="layout">
