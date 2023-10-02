@@ -19,7 +19,7 @@
 
     	// Load textures and create materials for the cube
     	for (let i = 0; i < 6; i++) {
-    		const texture = await loader.loadAsync('pfp.png');
+    		const texture = await loader.loadAsync('pfp.webp');
     		texture.colorSpace = THREE.SRGBColorSpace;
     		cubeMaterials.push(new THREE.MeshBasicMaterial({ map: texture }));
     	}

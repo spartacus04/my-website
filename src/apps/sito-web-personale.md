@@ -6,7 +6,7 @@ categories:
   - typescript
   - three
   - markdown
-image: /pfp.png
+image: /pfp.webp
 published: true
 ---
 
