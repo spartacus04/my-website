@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { initializeApp } from "firebase/app";
+	import { getAnalytics } from "firebase/analytics";
+
 	import Footer from './footer.svelte';
 	import Header from './header.svelte';
 	import PageTransition from './transition.svelte';
@@ -9,6 +12,19 @@
 	import '../app.css';
 
 	export let data;
+
+	const firebaseConfig = {
+		apiKey: "AIzaSyD-MF55EQwbaa_N57n9OyHnAFY7OifjcU8",
+		authDomain: "svasso-spensierato.firebaseapp.com",
+		projectId: "svasso-spensierato",
+		storageBucket: "svasso-spensierato.appspot.com",
+		messagingSenderId: "800382437915",
+		appId: "1:800382437915:web:5a555e1e436e37147a46be",
+		measurementId: "G-882R7BS7B4"
+	};
+
+	const app = initializeApp(firebaseConfig);
+	getAnalytics(app);
 </script>
 
 <div class="layout">
