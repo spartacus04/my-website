@@ -24,10 +24,10 @@ const iterate = (ipath: string) => {
 			fs.renameSync(currentPath, `${dirPath}/index.html`);
 
 			// replace everything in the capturing group with ../(first capturing group)
-			const regex = /href="(\.[^"]*)"/g;
+			const regex = /"(\.[^"]*)"/g;
 			const data = fs.readFileSync(`${dirPath}/index.html`, 'utf8');
 
-			const result = data.replace(regex, 'href="../$1"');
+			const result = data.replace(regex, '"../$1"');
 
 			fs.writeFileSync(`${dirPath}/index.html`, result, 'utf8');
 		}
